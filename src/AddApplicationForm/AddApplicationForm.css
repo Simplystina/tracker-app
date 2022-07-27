@@ -1,0 +1,129 @@
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: #1c23293a; /* Black w/ opacity */
+    transform: scale(1.15);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    width: 40%; /* Could be more or less, depending on screen size */
+    transition: all 0.3s ease-out;
+    padding-bottom: 20px;
+  }
+
+  .modal-heading{
+      display: flex;
+      justify-content: space-between;
+      background:rgb(54, 77, 217);
+      color: white;
+      padding: 10px;
+  }
+
+  .modal-heading p{
+     margin:  10px;
+     margin-bottom: 0;
+  }
+  .close-icon{
+      border: 1px solid white;
+      margin:  10px;
+      border-radius: 5px;
+      font-size: 20px;
+  }
+
+  .all-forms-container{
+      padding: 30px 30px 0;
+     
+  }
+  .form{
+      display: flex;
+      flex-direction: column;
+  }
+   
+  .form:not(:first-child){
+      margin-top: 30px;
+  }
+
+
+  .form select{
+      padding: 13px;
+      outline: none;
+      border: 1px solid #D0D5DD;
+      width: 100%;
+      border-radius: 6px;
+  }
+
+  .toast{
+      margin-top: 3em;
+  }
+
+  .form label{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: justified;
+    margin-bottom: 5px;
+  }
+  .form input{
+      width: 100%;
+      border-radius: 6px;
+      padding: 15px 15px;
+  }
+  
+  .add-application-btn-container{
+      width: 100%;
+      display: flex;
+      padding: 8px 20px;
+      justify-content: space-between;
+     
+  }
+
+  .clear-form{
+      width: 40%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid rgb(54, 77, 217);
+      color:rgb(54, 77, 217) ;
+      outline: none;
+      cursor: pointer;
+      background-color: white;
+  }
+
+  .update-form{
+    width: 40%;
+    padding: 11px;
+    border-radius: 6px;
+    background: rgb(54, 77, 217);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:666px) {
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto; /* 15% from the top and centered */
+        width: 70%;  
+    }
+}
+
+@media screen and (max-width:450px) {
+    .modal-content {
+        width: 80%;  
+    }
+    .add-application-btn-container{
+        padding: 8px 10px;
+    }
+}

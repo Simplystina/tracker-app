@@ -1,0 +1,33 @@
+.result_dropdown{
+    background-color: white;
+    padding: 6px;
+    border-radius: 2px;
+    position:absolute;
+    top: 25%;
+    right: -15%;
+    box-shadow: .1px .1px 1px grey;
+}
+
+.result_dropdown_paragraph{
+    margin: 0;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.result_dropdown_paragraph:not(:first-child){
+    border-top: .5px solid #eee;
+}
+.result_dropdown_paragraph--delete{
+    color: #FF3D00;
+}
+
+.dropdown_icon{
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+

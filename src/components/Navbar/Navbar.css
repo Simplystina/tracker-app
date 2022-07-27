@@ -1,0 +1,81 @@
+.navbar-container{
+    transition: all linear 2s !important;
+    background-color: white;
+    box-shadow: var(--light-shadow);
+    transition: 2s linear;
+    padding: 10px;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+        
+    
+}
+.menu-icon{
+    margin: 10px;
+    height: 25px;
+    width: 25px;
+    color: rgba(15, 71, 240, 0.696);
+    animation: bounce 2s ease-in-out infinite;
+ 
+}
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+
+
+.navbar-container h2{
+    font-family: Volkhov;
+    font-weight: 600;
+    font-size: 25px;
+}
+.user-btn{
+    height: 2.5rem;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+  }
+
+  .user-btn p{
+      font-size: 18px;
+      font-family: Inter;
+      padding: 20px 10px 0 10px;
+      font-weight: 500;
+  }
+.user-img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-icon{
+    margin-bottom:5px;
+}
+
+
+
+
+@media screen and (max-width:360px){
+    .menu-icon{
+        margin: 5px;
+        height: 20px;
+        width: 20px;
+    }
+    .navbar-container h2{
+        font-size: 20px;
+    }
+
+      .user-btn p{
+          font-size: 14px;
+      }
+}

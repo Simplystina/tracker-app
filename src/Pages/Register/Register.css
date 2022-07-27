@@ -1,0 +1,181 @@
+.registration-container{
+    background: #E5E5E5;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem 7rem;
+    display: flex;
+}
+.content1,.content2{
+    flex: 50%;
+    padding: 1.5rem 3.5rem;
+}
+  
+.content1 {
+    left: 0;
+    background-color: white;
+}
+  
+.content2 {
+    right: 0;
+    background-image: linear-gradient(#191919 0%, #101828 99.99%);
+  }
+  
+
+.logo{
+    width: 80px;
+    object-fit: contain;
+    
+}
+.registration-signup{
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 38.57px;
+    margin-top: 0.5rem;
+   
+}
+
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6rem;
+}
+.registration-form label{
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0.2rem;
+    font-family: Inter;
+    font-weight: 700;
+}
+.registration-form input{
+    outline: none;
+    padding: 10px;
+    border: 1px solid #D0D5DD;
+    border-radius: 3px;
+}
+::placeholder{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-weight: Inter;
+}
+.submit-btn{
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    background-color: #364DD9;
+}
+.google-icon{
+    width: 20px;
+    margin-right: 10px;
+}
+.googleSignin{
+    width: 100%;
+    color: #000000;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-status{
+    margin-top: 1rem;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.reg-status span{
+    color:#364DD9 ;
+    cursor: pointer;
+}
+
+.content2 h2{
+    color: white;
+    font-family: Inter;
+    font-size: 50px;
+    line-height: 72px;
+    font-weight: 500;
+}
+
+.content2 p{
+    color: white;
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.users{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.users img{
+    width: 130px;
+    object-fit: contain;
+}
+.users p{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+@media screen and (max-width:1020px) {
+    .registration-container{
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width:889px) {
+    .registration-container{
+        padding: 2rem 4rem;
+    }
+    .content1, .content2{
+        padding: 2rem;
+    }       
+    .content2 h2{
+        font-size: 35px;
+        line-height: 52px;
+    }
+    .content2 p{
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width:700px) {
+    .content1 {
+        top: 0;
+    }
+      
+    .content2 {
+        bottom: 0;
+    }
+    .registration-container{
+        flex-direction: column;
+        height: 100%;
+    }
+}
+@media screen and (max-width:520px) {
+    .registration-container{
+        padding: 2rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .registration-container{
+        padding: 2rem 1rem;
+    }
+    .users{
+        width: 100%;
+    }
+    .users p{
+        font-size: 12px;
+    }
+    .content1, .content2{
+        padding: 2rem 1rem;
+    } 
+}

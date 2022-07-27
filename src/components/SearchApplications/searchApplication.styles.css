@@ -1,0 +1,120 @@
+
+
+.search-container{
+    background-color: white;
+    border-radius: 6px;
+    margin-top:27px;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.search_container_heading{
+    font-size: 16px;
+   margin: 0;
+   display: flex;
+   align-items: center;
+}
+.search_container_heading span{
+    background: rgba(54, 77, 217, 0.16);
+    border-radius: 16px;
+    width: 29px;
+    height: 20px;
+    color: #364DD9;
+    padding: 4px 8px;
+    font-size: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search_container-field{
+    display: flex;
+    justify-content: flex-end;
+    flex: 0.6;
+}
+.search_container_field_input{
+  
+}
+
+.search_container_field_input span{
+    width:24px;
+    height:24px;
+    border-radius: 6px;
+    background: #364DD9;
+    color: white;
+    position: absolute;
+    top:50%;
+    margin-top: -12px;
+    right: 1.5%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+
+}
+.search_container_field_input_element{
+    width: 300px;
+    padding: 8px 10px;
+    border: 1px solid #C4C4C4;
+     border-radius: 6px;
+    font-family:inherit;
+}
+
+.search_container_field_input_element:focus{
+    outline-width: 2px;
+    outline-color:#939393 ;
+}
+
+.search_container_field_input_element::placeholder{
+    font-weight: 400;
+    font-family:inherit;
+    color:#ccc;
+}
+.search_container_field_dropdown{
+    background: #EDF1F2;
+    border-radius: 6px;
+    border:none;
+    margin-left: 15px;
+    font-family:inherit;
+}
+
+@media screen and (max-width:708px) {
+    .search-container{
+       flex-direction: column;
+       padding: 15px 10px;
+    }
+    .search-container p{
+       padding-bottom: 10px;
+       font-size: 18px;
+    }
+    
+}
+
+@media screen and (max-width:540px) {
+   
+    .search_container_field_input_element{
+        width: 270px;
+    }
+}
+
+@media screen and (max-width:450px) {
+   
+    .search_container_field_input_element{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:360px){
+    .search_container_field_input_element{
+        width: 110px;
+    }
+   .search_container_field_dropdown option{
+       font-size: 12px;
+   }
+    
+   .search-container{
+    padding: 15px 5px;
+ }
+}

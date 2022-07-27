@@ -1,0 +1,78 @@
+.profile-container{
+    padding: 20px 30px;
+}
+.profile-heading{
+    font-family: Inter;
+    color: #5C6578;
+    font-weight: 600;
+    font-size: 36px;
+}
+.profile-inner-container{
+    box-shadow: var(--shadow-4);
+    margin: 50px;
+    padding: 20px;
+    background-color: white;
+}
+.profile-form-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    
+}
+
+.update-users-form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6rem;
+}
+.update-users-form label{
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 0.8rem;
+    font-family: Inter;
+    font-weight: 700;
+}
+.update-users-form input{
+    outline: none;
+    padding: 15px;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+}
+::placeholder{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-weight: Inter;
+}
+.save-btn{
+    width: 100%;
+    margin: 2rem 0 0.5rem 0;
+    background-color: #364DD9;
+}
+
+
+
+@media screen and (max-width: 728px) {
+    .profile-inner-container{
+        margin: 10px ;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .profile-heading{
+        font-size: 25px;
+    }
+    .profile-inner-container{
+        margin: 10px;
+    }
+    .profile-form-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 0;
+    }
+    .update-users-form{
+        margin-bottom: 1.5rem;
+        margin: 10px;
+    }
+}

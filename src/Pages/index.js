@@ -1,0 +1,6 @@
+export {default as LandingPage} from './LandingPage/LandingPage'
+export {default as Register} from './Register/Register'
+export {default as Dashboard} from './Dashboard/Dashboard'
+export {default as Applications} from './Applications/Applications'
+export {default as Feeds} from './Feeds/Feeds'
+export {default as AccountProfile} from './AccountProfile/AccountProfile'

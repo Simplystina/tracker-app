@@ -1,0 +1,14 @@
+.skeleton_container{
+    display:  flex;
+    justify-content: space-between ;
+    width:100%;
+    margin-bottom: 50px;
+}
+
+.skeleton_flex{
+    display: flex;
+}
+
+.skel{
+    width: 100%;
+}
