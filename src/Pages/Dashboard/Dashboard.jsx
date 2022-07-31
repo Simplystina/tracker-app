@@ -5,7 +5,7 @@ import {Navigate} from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
-  const token = localStorage.getItem("auth_state")
+  const token = localStorage.getItem("user")
   return (<>{
     
 token ? (<div>

@@ -1,4 +1,4 @@
-import React, {  useReducer } from 'react'
+import React, {  useReducer, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Register.css'
 import {toast, ToastContainer} from 'react-toastify'
@@ -9,34 +9,11 @@ import star from '../../images/Stars.png'
 import {signInuser, signUpUser, signUpWithGoogle } from '../../Services/connectApi';
 import Users from '../../images/Users.png'
 import validator from 'validator'
+import { registerUser, loginUser } from '../../features/user/userSlice';
+import { Dispatch } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-
-const intialState = {
-    name:'',
-    email: '',
-    password:'',
-    registeredStatus: false
-}
-
-
-const reducer = (state=intialState,action={}) => {
-    const {type,payload} = action
-    switch (type) {
-        case 'name':
-            return {...state,name:payload}
-        case 'email':
-            return {...state,email:payload}
-            
-        case 'password':
-            return {...state,password: payload}
-           
-        case 'status':
-            return {...intialState,registeredStatus:!state.registeredStatus}
-        default:
-            break;
-    }
-}
 
 
 
@@ -45,47 +22,55 @@ const reducer = (state=intialState,action={}) => {
 const Register = () => {
     
     
-    const [state,dispatch] = useReducer(reducer,intialState)
+   
     const navigate= useNavigate()
+    const dispatch = useDispatch()
 
-    const {name,email,password,registeredStatus} = state
+  
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const [registeredStatus, setRegisteredStatus] = useState()
 
  
     const handleOnChange = (e) => {
-        dispatch({
-            type:e.target.name,
-            payload:e.target.value
-        })
+        if (e.target.name==="name") {
+            setName(e.target.value)
+        }else if(e.target.name==="password"){
+            setPassword(e.target.value)
+        }else  if(e.target.name==="email"){
+            setEmail(e.target.value)
+        }
     }
 
   
     const submitForm = async (e)=>{
         if (registeredStatus && email && password) {
             if (!validator.isEmail(email)) { toast.warning("Please enter a valid email")}
-            if (password.length < 8) {return toast.warning("Password should be upto 8 characters") }
+            if (password.length < 5) {return toast.warning("Password should be upto 8 characters") }
             
             try{
-                 await signInuser(email,password)
+
+                dispatch(loginUser({email, password }));
+                console.log(email, password)
+                navigate('/dashboard/overview')
+                
             }catch(error){
                 toast.error('Invalid credentials')
                 console.log(error)
             }
-            finally{
-                return navigate('/dashboard/overview')
-            }
+    
         }else if(!registeredStatus && email && password && name){
 
             if (!validator.isEmail(email)) {toast.warning("Please enter a valid email")}
-            if (password.length < 8) { return toast.warning("Password should be upto 8 characters") }
+            if (password.length < 5) { return toast.warning("Password should be upto 8 characters") }
 
             try{
-                await signUpUser(name,email,password)
-                toast.success("Registration Successful")
-                navigate('/dashboard/overview')
-                dispatch({
-                    type: "status"})
+                dispatch(registerUser({ name, email, password }));
+                //toast.success("Registration Successful")
+        
             } catch(error){
-                console.log(error,"erorrrrrr")
+                console.log(error.response,"erorrrrrr")
                 toast.error("Account already exist")
             }
         }else{
@@ -136,7 +121,7 @@ const Register = () => {
             <button onClick={(e)=> submitForm(e)} className='btn submit-btn'>submit</button>
             <button className='btn googleSignin'  onClick={(e)=> {handleSignUpWithGoogle(e)}}> <img className='google-icon' src={googleIcon} alt='google icon'/> {registeredStatus? "signin with google": "sign up with google" } 
             </button>
-            <p className='reg-status'>{registeredStatus?"Don't have an account?" :'Already have an account?'} <span onClick={()=> dispatch({type: 'status'})}>{registeredStatus?'Sign up' :'Sign in'}</span></p>
+            <p className='reg-status'>{registeredStatus?"Don't have an account?" :'Already have an account?'} <span onClick={()=> setRegisteredStatus(!registeredStatus)}>{registeredStatus?'Sign up' :'Sign in'}</span></p>
         </div>
         <div className='content2'>
             <img src={star} alt='star'/>

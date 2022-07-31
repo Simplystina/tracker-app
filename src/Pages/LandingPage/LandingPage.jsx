@@ -16,7 +16,7 @@ const LandingPage = () => {
   return (
   <>
     {
-     isLoading ? <Loader/> : ( 
+     !isLoading ? <Loader/> : ( 
       <div className='landingpage-container'>
         <nav className='landingpage-navbar'><img src={logo} alt='logo'></img></nav>
         <div className='landingpage-content'>
