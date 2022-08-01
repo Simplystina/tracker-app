@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
+
 import {
   addUserToLocalStorage,
   getUserFromLocalStorage,
@@ -16,6 +19,8 @@ const initialState = {
   isLoading: false,
   isSidebarOpen: false,
   user: getUserFromLocalStorage(),
+  loggedin: false,
+  registered: false
 };
 
 export const registerUser = createAsyncThunk(
@@ -41,7 +46,9 @@ export const updateUser = createAsyncThunk(
   }
 );
 export const clearStore = createAsyncThunk('user/clearStore', clearStoreThunk);
+
 const userSlice = createSlice({
+  
   name: 'user',
   initialState,
   reducers: {
@@ -58,6 +65,7 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
+    
     [registerUser.pending]: (state) => {
       state.isLoading = true;
     },
@@ -67,10 +75,12 @@ const userSlice = createSlice({
       state.user = user;
       addUserToLocalStorage(user);
       toast.success(`Hello There ${user.name}`);
+      state.registered = true
     },
     [registerUser.rejected]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
+      state.registered = false
     },
     [loginUser.pending]: (state) => {
       state.isLoading = true;
@@ -83,10 +93,13 @@ const userSlice = createSlice({
       addUserToLocalStorage(user);
 
       toast.success(`Welcome Back ${user.name}`);
+      state.loggedin= true
+      
     },
     [loginUser.rejected]: (state, { payload }) => {
       state.isLoading = false;
       toast.error(payload);
+      state.loggedin = false
     },
     [updateUser.pending]: (state) => {
       state.isLoading = true;

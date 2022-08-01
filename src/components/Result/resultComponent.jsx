@@ -1,15 +1,24 @@
 import { useState } from 'react';
 import './resultComponent.styles.css'
 import {BsThreeDotsVertical } from "react-icons/bs";
-
+import moment from 'moment';
 import ResultDropdown from '../resultDropdown/resultDropdown';
 
 
 
-const Result = ({application})=>{
+const Result = ({
+    _id,
+    position,
+    company,
+    jobLocation,
+    jobType,
+    createdAt,
+    status,
+    showModal
+  })=>{
     const [showDropdown,setShowDropdown] = useState(false)
-
-    const {location,position,status,jobType,company,$id } = application
+    const date = moment(createdAt).format('MMM Do, YYYY');
+    
 
 
    return (
@@ -23,14 +32,26 @@ const Result = ({application})=>{
         </div>
         <div className="result_center">
             <h2 className="result_center_title">{position} </h2>
-            <p className="result_center_paragraph">{location}     <span className="dot dot-center"></span>{jobType}</p>
+            <p className="result_center_paragraph">{jobLocation}     <span className="dot dot-center"></span>{jobType}</p>
         </div>
         <div className="result_bottom">
             <p className="result_bottom_paragraph">
                 {company} <span>{status}</span>
             </p>
         </div>
-        {showDropdown && <ResultDropdown id={$id}/>}
+        <div>
+            <h2 className="result_center_title">Date</h2>
+            <p className="result_bottom_paragraph">{date}</p>
+        </div>
+        {showDropdown && <ResultDropdown status={status}
+                                   jobType={jobType} 
+                                     jobLocation={jobLocation}
+                                     editJobId={_id}
+                                     position={position}
+                                     company={company}
+                                     _id={_id}
+                                     showModal={showModal}
+                                     />}
     </div>
    )
 }

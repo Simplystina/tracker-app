@@ -18,6 +18,11 @@
   margin-top:40px;
 }
 
+.none-application-results h4{
+  margin: 30px;
+  text-align: center;
+}
+
 @media screen and (max-width:760px) {
   .application-results{
     display:grid;

@@ -89,7 +89,7 @@
 @media screen and (min-width:1006px) {
   
   #sidenav{
-     width: 14rem;
+     width: 14rem !important;
      display: block;
   }
 }
@@ -97,6 +97,16 @@
 @media screen and (min-width:520px) {
   .nav-links{
     font-size: 13px;
+  }
+  .sidebar-logo{
+    margin: 10px 10px 40px 10px;
+    width: 5rem;
+  }
+
+}
+@media screen and (max-width:400px) {
+  .nav-links{
+    font-size: 12px;
   }
   .sidebar-logo{
     margin: 10px 10px 40px 10px;

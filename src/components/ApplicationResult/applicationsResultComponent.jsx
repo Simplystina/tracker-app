@@ -7,20 +7,25 @@ import { Loader } from '../Index';
 
 
 
-const ApplicationResults = ({isLoading,filteredData})=>{
-
-
-    if(isLoading) return <Loader/>
-
+const ApplicationResults = ({jobs, showModal})=>{
+  
     return (
-        <section className="application-results">
+        <div>
+            
             {
-            filteredData.length> 0 ? filteredData.map(application=> {
-                    return <Result key= {application['$id']} application={application} />
-                }) :  <h4>Empty
-                </h4>
+            jobs.length> 0 ? jobs.map(job=> {
+                return ( 
+                    <section className="application-results">
+                        <Result showModal={showModal} key={job._id} {...job} />
+                    </section>
+                    )
+                }) :  <div className='none-application-results'>
+                        <h4>No jobs to display...</h4>
+                      </div>
             }  
-        </section>
+        
+        </div>
+        
     )
 }
 

@@ -1,6 +1,6 @@
 .dashboard-overview{
     padding: 20px 30px;
-  
+   margin-top: 30px;
 }
 .overview-text{
     font-size: 32px;
@@ -140,6 +140,9 @@
 }
 
 @media screen and (max-width:700px) {
+    .overview-text{
+        font-size: 23px;
+    }
     .overview-topjob-content h2{
        font-size: 14px;
     }
@@ -168,9 +171,56 @@
 
 @media screen and (max-width:520px) {
     .overview-text{
-        font-size: 25px;
+        font-size: 20px;
     }
     .overview-heading2 h2{
         font-size: 16px;
+    }
+    .overview-stats-count{
+        font-size: 20px;
+    }
+    .overview-stats-text1{
+        font-size: 10px;
+    }
+    
+    .overview-stats-text2{
+        font-size: 10px;
+    }
+    .overview-stats-percent{
+        font-size: 12px;
+    }
+    
+    .dashboard-overview{
+        padding: 10px;
+      
+    }
+    .overview-topjob-content h2{
+        font-size: 14px;
+    }
+    .overview-topjob-content p{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:320px) {
+    .overview-stats{
+        padding: 10px 20px;
+    }
+    .overview-heading2 h2{
+        font-size: 12px;
+    }
+    .overview-heading2 button{
+        padding: 5px 8px;
+    }
+    .overview-topjob-content h2{
+        font-size: 11px;
+    }
+    .overview-topjob-content p{
+        font-size: 8px;
+    }
+    
+}
+@media screen and (max-width:250px) {
+    .overview-stats{
+        padding: 5px;
     }
 }

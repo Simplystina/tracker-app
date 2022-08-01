@@ -13,24 +13,16 @@ import { registerUser, loginUser } from '../../features/user/userSlice';
 import { Dispatch } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-
-
-
-
-
-
 const Register = () => {
     
-    
-   
     const navigate= useNavigate()
     const dispatch = useDispatch()
 
-  
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [registeredStatus, setRegisteredStatus] = useState()
+    const { user, isLoading, loggedin, registered } = useSelector((store) => store.user);
 
  
     const handleOnChange = (e) => {
@@ -48,31 +40,19 @@ const Register = () => {
         if (registeredStatus && email && password) {
             if (!validator.isEmail(email)) { toast.warning("Please enter a valid email")}
             if (password.length < 5) {return toast.warning("Password should be upto 8 characters") }
-            
-            try{
+                 dispatch(loginUser({email, password }));
+                 console.log(loggedin, "loggedin now")
+                 loggedin && navigate("/dashboard/overview/")
+          
+           }else if(!registeredStatus && email && password && name){
 
-                dispatch(loginUser({email, password }));
-                console.log(email, password)
-                navigate('/dashboard/overview')
-                
-            }catch(error){
-                toast.error('Invalid credentials')
-                console.log(error)
-            }
-    
-        }else if(!registeredStatus && email && password && name){
+              if (!validator.isEmail(email)) {toast.warning("Please enter a valid email")}
+              if (password.length < 5) { return toast.warning("Password should be upto 8 characters") }
+                  dispatch(registerUser({ name, email, password }));
 
-            if (!validator.isEmail(email)) {toast.warning("Please enter a valid email")}
-            if (password.length < 5) { return toast.warning("Password should be upto 8 characters") }
-
-            try{
-                dispatch(registerUser({ name, email, password }));
-                //toast.success("Registration Successful")
+                  registered && setRegisteredStatus(registeredStatus(!registeredStatus))
         
-            } catch(error){
-                console.log(error.response,"erorrrrrr")
-                toast.error("Account already exist")
-            }
+            
         }else{
             toast.error("Please fill all the fields!")
         }

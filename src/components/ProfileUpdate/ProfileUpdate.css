@@ -1,5 +1,6 @@
 .profile-container{
     padding: 20px 30px;
+    margin-top: 20px;
 }
 .profile-heading{
     font-family: Inter;
@@ -12,6 +13,10 @@
     margin: 50px;
     padding: 20px;
     background-color: white;
+}
+.profile-inner-container h2{
+    font-size: 20px;
+    font-weight: 700;
 }
 .profile-form-container{
     display: grid;

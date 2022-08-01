@@ -1,10 +1,8 @@
-
-
 .search-container{
     background-color: white;
     border-radius: 6px;
     margin-top:27px;
-    padding: 18px 32px;
+    padding: 18px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,10 +32,20 @@
     justify-content: flex-end;
     flex: 0.6;
 }
-.search_container_field_input{
-  
+.clear-filter-btn{
+    background: #364DD9;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 6px 20px;
+    margin: 0 10px;
+    transition: all 0.5s linear;
 }
-
+.clear-filter-btn:hover{
+    border: 1px solid #364DD9;
+    color: #364DD9;
+    background-color: white;
+}
 .search_container_field_input span{
     width:24px;
     height:24px;
@@ -79,23 +87,31 @@
     margin-left: 15px;
     font-family:inherit;
 }
-
-@media screen and (max-width:708px) {
+@media screen and (max-width: 1144px) {
     .search-container{
-       flex-direction: column;
-       padding: 15px 10px;
-    }
-    .search-container p{
-       padding-bottom: 10px;
-       font-size: 18px;
-    }
-    
+        flex-direction: column;
+        padding: 15px 10px;
+     }
+     .search-container p{
+        padding-bottom: 20px;
+        font-size: 21px;
+     }
+}
+@media screen and (max-width:724px) {
+     .search_container_field_input_element{
+        width: 200px;
+    } 
 }
 
-@media screen and (max-width:540px) {
-   
-    .search_container_field_input_element{
-        width: 270px;
+@media screen and (max-width:656px) {
+    .search_container-field{
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .search_container_field_dropdown{
+        margin: 10px 0;
+        padding: 10px;
     }
 }
 
@@ -104,6 +120,7 @@
     .search_container_field_input_element{
         width: 150px;
     }
+    
 }
 
 @media screen and (max-width:360px){
@@ -115,6 +132,15 @@
    }
     
    .search-container{
-    padding: 15px 5px;
- }
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width:265px){
+    .search-container p{
+        font-size: 15px;
+    }
+    .search_container-field{
+        justify-content: center;
+    }
 }

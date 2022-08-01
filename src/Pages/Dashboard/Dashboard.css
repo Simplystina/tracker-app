@@ -4,14 +4,23 @@
   height: 100vh;
   overflow-y: scroll;
   transition: all 0.5s linear;
+  position: relative;
 }
 
 
-
+.harmburger-menu{
+   position: absolute;
+   top: 5px;
+   left: 8px;
+   display: none;
+}
 @media screen and (max-width:1006px) {
   #page-content{
       margin-left: 0 ;
   }
+  .harmburger-menu{
+    display: block;
+ }
 }
 
   

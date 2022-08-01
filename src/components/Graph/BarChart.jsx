@@ -1,69 +1,31 @@
-import React from 'react'
-import { Bar } from "react-chartjs-2";
-import Chart from 'chart.js/auto' //eslint-disable-line 
-import './BarChart.css'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+import "./BarChart.css"
+import graph from '../../images/graph.png'
 
-const BarChart = () => {
-     const data = {
-        "Jan":0,
-        "feb":2, 
-        "Mar":0, 
-        "April":5, 
-        "May":3,
-        "June":0, 
-        "July":0, 
-        "Aug":10,
-        "Sept":16,
-        "Oct":0,
-        "Nov":0,
-        "Dec":0,
-     }
+const BarChartComponent = ({ data }) => {
   return (
-    <div className='chart'>
-        <h2>Monthly Applications</h2>
-      <div className='chart-container'>
-        <Bar
-          data={{
-            // Name of the variables on x-axies for each bar
-            labels: ["Jan", "feb", "Mar", "April", "May","June", "July", "Aug","Sept","Oct","Nov","Dec"],
-            datasets: [
-              {
-                // Label for bars
-                label: "total count/value",
-                // Data or value of your each variable
-                data: Object.values(data),
-                // Color of each bar
-                backgroundColor: "#364DD9",
-                // Border color of each bar
-                //borderColor: ["aqua", "green", "red", "yellow"],
-                borderWidth: 0.5,
-              },
-            ],
-          }}
-          // Height of graph
-          height={400}
-        
-          options={{
-            maintainAspectRatio: false,
-            scales: {
-              y: {
-                  ticks: {
-                    // The y-axis value will start from zero
-                    beginAtZero: true,
-                  },
-                },
-              
-            },
-            legend: {
-              labels: {
-                fontSize: 15,
-              },
-            },
-          }}
-        />
-      </div>
+    <>
+    <h2 className='chart-heading'>Monthly Applications</h2>
+    <div className="chart-container">
+    <ResponsiveContainer  width='100%' height={300}>
+      <BarChart data={data} margin={{ top: 50 }}>
+        <CartesianGrid strokeDasharray='10 10 ' />
+        <XAxis dataKey='date' />
+        <YAxis allowDecimals={false} />
+        <Tooltip />
+        <Bar dataKey='count' fill='#3b82f6' barSize={75} />
+      </BarChart>
+    </ResponsiveContainer>
     </div>
-  )
-}
-
-export default BarChart
+    </>
+  );
+};
+export default BarChartComponent;
