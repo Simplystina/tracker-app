@@ -8,24 +8,23 @@ import { Loader } from '../Index';
 
 
 const ApplicationResults = ({jobs, showModal})=>{
-  
+   console.log(jobs, "jobs")
+
     return (
-        <div>
-            
+        <>
             {
-            jobs.length> 0 ? jobs.map(job=> {
-                return ( 
-                    <section className="application-results">
-                        <Result showModal={showModal} key={job._id} {...job} />
-                    </section>
-                    )
-                }) :  <div className='none-application-results'>
-                        <h4>No jobs to display...</h4>
-                      </div>
+            jobs.length> 0 ? 
+            <section className="application-results">
+            {jobs.map(job=> {
+                    return <Result showModal={showModal} key={job._id} {...job} />
+                }) }
+            </section>
+            : 
+               <div className='none-application-result'>
+                  <h4>No jobs to display...</h4>
+               </div> 
             }  
-        
-        </div>
-        
+        </>
     )
 }
 

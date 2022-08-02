@@ -27,12 +27,11 @@
     
 }
 .registration-signup{
-    font-family: Inter;
     font-weight: 700;
     font-size: 36px;
     line-height: 38.57px;
     margin-top: 0.5rem;
-   
+    
 }
 
 .registration-form{
@@ -45,7 +44,6 @@
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0.2rem;
-    font-family: Inter;
     font-weight: 700;
 }
 .registration-form input{
@@ -72,7 +70,6 @@
 .googleSignin{
     width: 100%;
     color: #000000;
-    font-family: Inter;
     font-weight: 700;
     font-size: 14px;
     display: flex;
@@ -83,7 +80,6 @@
 .reg-status{
     margin-top: 1rem;
     text-align: center;
-    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
 }
@@ -95,7 +91,6 @@
 
 .content2 h2{
     color: white;
-    font-family: Inter;
     font-size: 50px;
     line-height: 72px;
     font-weight: 500;
@@ -103,7 +98,6 @@
 
 .content2 p{
     color: white;
-    font-family: Inter;
     font-size: 18px;
     line-height: 24px;
     font-weight: 500;

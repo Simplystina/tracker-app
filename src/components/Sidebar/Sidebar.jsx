@@ -10,16 +10,18 @@ import { logOutUser } from '../../Services/connectApi'
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css'
 import {AiOutlineClose} from 'react-icons/ai'
+import { toggleSidebar, clearStore } from '../../features/user/userSlice';
+import { useSelector ,useDispatch} from 'react-redux'
 
 const Sidebar = () => {
   const navigate = useNavigate()
-
+  const dispatch = useDispatch()
    
   const node = useRef();
 
   const handleLogOut = async () => {
-          logOutUser()
-          navigate('/login')
+    dispatch(clearStore('Logging out...'))
+    navigate('/login')
   }
   const closeSidebar = ()=>{
     document.getElementById("sidenav").style.width = "0";
@@ -60,7 +62,7 @@ useEffect(() => {
           <li><NavLink className="nav-links" to='/dashboard/applications'  style={({ isActive }) => ({ background: isActive ? "#364DD9" : "none" ,color: isActive? 'white':"#5C6578"})}><MdQueryStats className='links-icon'/>  Applications</NavLink></li>
           <li><NavLink className="nav-links" to='/dashboard/feeds' style={({ isActive }) => ({ background: isActive ? "#364DD9" : "none",color: isActive? 'white':"#5C6578" })}> <MdOutlinePostAdd className='links-icon'/> Feeds</NavLink></li>
           <li><NavLink className="nav-links" to='/dashboard/account' style={({ isActive }) => ({ background: isActive ? "#364DD9" : "none",color: isActive? 'white':"#5C6578" })}><ImProfile className='links-icon' />Account</NavLink></li>
-          <li className='logout' onClick={()=> handleLogOut()}>  <BiLogOut className='links-icon' />logout</li >
+         <li className='logout' onClick={()=> handleLogOut()}>  <BiLogOut className='links-icon' />logout</li >
        </ul>
     </aside>
   )

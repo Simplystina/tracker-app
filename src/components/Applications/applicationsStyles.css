@@ -2,6 +2,7 @@ header{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    align-items: center;
 }
 .heading{
     font-size:32px;
@@ -30,7 +31,7 @@ header{
         font-size:25px;
     }
     .btn-search{
-        height: 30px;
+        height: 40px;
         width: 90px;
     }
 }

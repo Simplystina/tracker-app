@@ -112,9 +112,9 @@ import {
              <form className='form'>
                  <label>Status</label>
                  <select name='status' value={status}  onChange={handleJobInput}>
-                     <option value='Pending'>pending</option>
-                     <option value='Declined'>declined</option>
-                     <option value= 'Accepted'>accepted</option>
+                     <option value='pending'>pending</option>
+                     <option value='declined'>declined</option>
+                     <option value= 'interview'>accepted</option>
                  </select>
              </form>
              <form className='form'>
@@ -130,7 +130,7 @@ import {
                  <button className='clear-form' onClick={() => dispatch(clearValues())}>clear</button>
                  <button className='update-form' onClick={handleSubmit} disabled={isLoading}> {isLoading?"submiting...":"Submit"}</button>
              </div>
-             </div>
+            </div>
              
         </div>
     </div>

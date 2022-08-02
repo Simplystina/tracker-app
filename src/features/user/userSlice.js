@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 
 import {
@@ -60,6 +59,7 @@ const userSlice = createSlice({
       state.isSidebarOpen = false;
       removeUserFromLocalStorage();
       if (payload) {
+        console.log(payload,"logout payload")
         toast.success(payload);
       }
     },
@@ -89,9 +89,7 @@ const userSlice = createSlice({
       const { user } = payload;
       state.isLoading = false;
       state.user = user;
-  
       addUserToLocalStorage(user);
-
       toast.success(`Welcome Back ${user.name}`);
       state.loggedin= true
       
@@ -109,7 +107,6 @@ const userSlice = createSlice({
       state.isLoading = false;
       state.user = user;
       addUserToLocalStorage(user);
-
       toast.success(`User Updated!`);
     },
     [updateUser.rejected]: (state, { payload }) => {

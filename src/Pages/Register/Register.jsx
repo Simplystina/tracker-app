@@ -42,17 +42,21 @@ const Register = () => {
             if (password.length < 5) {return toast.warning("Password should be upto 8 characters") }
                  dispatch(loginUser({email, password }));
                  console.log(loggedin, "loggedin now")
-                 loggedin && navigate("/dashboard/overview/")
+                 setTimeout(() => {
+                    return  loggedin && navigate("/dashboard/overview/");
+                  }, 3000);
+                
           
            }else if(!registeredStatus && email && password && name){
 
               if (!validator.isEmail(email)) {toast.warning("Please enter a valid email")}
               if (password.length < 5) { return toast.warning("Password should be upto 8 characters") }
                   dispatch(registerUser({ name, email, password }));
+                  console.log(registered, "registered")
+                  setTimeout(() => {
+                    return  registered && setRegisteredStatus(registeredStatus(!registeredStatus));
+                  }, 3000);
 
-                  registered && setRegisteredStatus(registeredStatus(!registeredStatus))
-        
-            
         }else{
             toast.error("Please fill all the fields!")
         }
@@ -61,11 +65,6 @@ const Register = () => {
         
     }
     
-        const handleSignUpWithGoogle = async (e)=>{
-            e.preventDefault()
-           await signUpWithGoogle()
-        }
-
     
   return (
     <>
@@ -99,8 +98,6 @@ const Register = () => {
                 />
             </form>
             <button onClick={(e)=> submitForm(e)} className='btn submit-btn'>submit</button>
-            <button className='btn googleSignin'  onClick={(e)=> {handleSignUpWithGoogle(e)}}> <img className='google-icon' src={googleIcon} alt='google icon'/> {registeredStatus? "signin with google": "sign up with google" } 
-            </button>
             <p className='reg-status'>{registeredStatus?"Don't have an account?" :'Already have an account?'} <span onClick={()=> setRegisteredStatus(!registeredStatus)}>{registeredStatus?'Sign up' :'Sign in'}</span></p>
         </div>
         <div className='content2'>

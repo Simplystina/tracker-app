@@ -3,7 +3,6 @@
     margin-top: 20px;
 }
 .profile-heading{
-    font-family: Inter;
     color: #5C6578;
     font-weight: 600;
     font-size: 36px;
@@ -21,8 +20,8 @@
 .profile-form-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-    
+    gap: 10px;
+    width: 100%;
 }
 
 .update-users-form{
@@ -35,7 +34,6 @@
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 0.8rem;
-    font-family: Inter;
     font-weight: 700;
 }
 .update-users-form input{
@@ -43,12 +41,12 @@
     padding: 15px;
     border: 1px solid #D0D5DD;
     border-radius: 4px;
+    width: 100%;
 }
 ::placeholder{
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    font-weight: Inter;
 }
 .save-btn{
     width: 100%;
@@ -75,9 +73,25 @@
         display: grid;
         grid-template-columns: repeat(1,1fr);
         gap: 0;
+        width: 100%;
+        padding: 0;
     }
     .update-users-form{
         margin-bottom: 1.5rem;
         margin: 10px;
+    }
+    .update-users-form input{
+       width: 100%;
+    }
+    .profile-container{
+        padding: 20px 20px;
+    }
+    .profile-inner-container{
+        margin: 0px;
+    }
+}
+@media screen and (max-width:335px) {
+    .update-users-form input{
+        width: 100%;
     }
 }

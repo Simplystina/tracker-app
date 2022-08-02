@@ -11,7 +11,6 @@ const Dashboard = () => {
 
 
   useEffect(()=>{
-   token = localStorage.getItem("user")
     console.log(token, "token")
   },[token])
  

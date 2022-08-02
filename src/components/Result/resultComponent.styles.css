@@ -3,8 +3,13 @@
     border-radius: 3px;
     padding: 24px;
     position: relative;
+    transition: all .5s linear;
 }
-
+.application_results_result:hover{
+    border: 2px solid teal;
+    transition: all .5s linear;
+    transform: scaleX(1.1);
+}
 .result_top{
     display: flex;
     align-items: center;

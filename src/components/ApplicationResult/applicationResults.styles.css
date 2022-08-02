@@ -16,9 +16,11 @@
   grid-auto-rows: minmax(200px,1fr);
   gap: 30px;
   margin-top:40px;
+  
 }
 
-.none-application-results h4{
+
+.none-application-result h4{
   margin: 30px;
   text-align: center;
 }

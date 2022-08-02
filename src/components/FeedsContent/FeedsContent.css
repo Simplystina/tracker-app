@@ -86,6 +86,7 @@
 .post-content{
     margin-top: -15px;
     margin-left: 4rem;
+    width: 80%;
 }
 
 .post-content p{
@@ -260,6 +261,10 @@
     .box-item{
         margin-left: 5px;
     }
+    .post-content{
+        width: 80%;
+
+    }
 }
 @media screen and (max-width:650px) {
     .feedbox-content-container{
@@ -276,6 +281,9 @@
     }
     .feeds-container{
         padding: 20px 5px;
+    }
+    .new_post_container{
+        padding: 10px;
     }
 }
 
