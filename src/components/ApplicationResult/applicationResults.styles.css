@@ -1,24 +1,14 @@
 .application-results{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-rows: minmax(200px,1fr);
     gap: 30px;
     margin-top:40px;
+    width: 100%;
 }
 
 .application-loader{
   margin: auto;
 }
-
-.application-results{
-  display:grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-auto-rows: minmax(200px,1fr);
-  gap: 30px;
-  margin-top:40px;
-  
-}
-
 
 .none-application-result h4{
   margin: 30px;
@@ -29,14 +19,15 @@
   .application-results{
     display:grid;
     grid-template-columns: repeat(2,1fr);
-    grid-auto-rows: minmax(200px,1fr);
+
+    gap: 10px;
   }
 }
 @media screen and (max-width:370px) {
   .application-results{
     display:grid;
     grid-template-columns: repeat(1,1fr);
-    grid-auto-rows: minmax(200px,1fr);
+    gap: 10px;
   }
 }
 

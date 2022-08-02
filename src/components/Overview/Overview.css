@@ -1,6 +1,6 @@
 .dashboard-overview{
-    padding: 20px 30px;
-   margin-top: 30px;
+  padding: 20px 30px;
+   margin: 30px auto 0 auto;
 }
 .overview-text{
     font-size: 32px;
@@ -154,7 +154,7 @@
 @media screen and (max-width:618px) {
     .overview-topjob-container{
         display: grid;
-       grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
     .overview-stats-container{
@@ -214,16 +214,16 @@
         padding: 10px 20px;
     }
     .overview-heading2 h2{
-        font-size: 12px;
+        font-size: 14px;
     }
     .overview-heading2 button{
         padding: 5px 8px;
     }
     .overview-topjob-content h2{
-        font-size: 11px;
+        font-size: 13px;
     }
     .overview-topjob-content p{
-        font-size: 8px;
+        font-size: 10px;
     }
     
 }
