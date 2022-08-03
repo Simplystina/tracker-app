@@ -19,7 +19,7 @@ It also enables users to add their applications and keep track of them. Tracker 
 
 ## Important links
 * [Figma Link](https://www.figma.com/file/U0qX0OsTmLoaPI4uwxyDe2/AppWrite-Hackathon?node-id=5%3A3)
-* [Main App]()
+* [Main App](https://tracker-webapp.netlify.app/)
 
 
 
